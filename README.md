@@ -20,9 +20,7 @@ O peso não pode ser superior a 10 ton
 Exemplo de requisição:
 
 {
-
-  "empresa": "Obramax",
-  
+  "empresa": "Obramax", 
   "cnpj": "00000000000000",
   "endereco": {
     "rua": "rua dos bobos",
