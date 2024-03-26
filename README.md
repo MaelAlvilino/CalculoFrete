@@ -1,4 +1,4 @@
-#Desafio: Cálculo de Preço de Frete
+# Desafio: Cálculo de Preço de Frete
 
 Descrição:
 Você faz parte de uma empresa de logística, responsável por um novo projeto voltado para calcular o preço do frete com base no peso dos produtos. Seu objetivo é desenvolver um endpoint POST em uma API que receba os detalhes dos produtos a serem enviados e calcule o preço final do frete com base nessas informações.
@@ -6,11 +6,15 @@ Você faz parte de uma empresa de logística, responsável por um novo projeto v
 Estrutura do Objeto JSON:
 O endpoint receberá um objeto JSON contendo detalhes dos produtos a serem enviados, incluindo o peso de cada produto. Além disso, você terá acesso a um banco de dados com a tabela de preços de frete, onde poderá buscar as informações necessárias para realizar o cálculo.
 
-#Stack
+# Stack
 O contribuidor pode fazer em qualquer lang e utilizar qualquer ferramenta que achar necessario para alcancer a melhor performance.
 
+# Regras:
+O CLIENTE precisa ter um cnpj valido.
+O cep precisa estar no range da tabela de preço de frete.
+O peso não pode ser superior a 10 ton
 
-#Dados
+# Dados
 Exemplo de requisição:
 
 {
@@ -70,8 +74,5 @@ VALUES
 ('1ton a 10ton', '20001', '50000', 500.00);
 
 
-#Regras:
-O CLIENTE precisa ter um cnpj valido.
-O cep precisa estar no range da tabela de preço de frete.
-O peso não pode ser superior a 10 ton
+
 
