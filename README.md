@@ -11,7 +11,9 @@ O contribuidor pode fazer em qualquer lang e utilizar qualquer ferramenta que ac
 
 # Regras:
 O CLIENTE precisa ter um cnpj valido.
+
 O cep precisa estar no range da tabela de preço de frete.
+
 O peso não pode ser superior a 10 ton
 
 # Dados
