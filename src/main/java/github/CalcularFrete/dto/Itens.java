@@ -1,4 +1,4 @@
-package github.CalcularFrete.Dto;
+package github.CalcularFrete.dto;
 
 public class Itens {
   private String nome;

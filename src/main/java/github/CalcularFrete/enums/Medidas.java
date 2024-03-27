@@ -1,4 +1,4 @@
-package github.CalcularFrete.Enum;
+package github.CalcularFrete.enums;
 
 public enum Medidas {
   gr("gr"),
