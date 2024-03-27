@@ -10,11 +10,12 @@ O endpoint receberá um objeto JSON contendo detalhes dos produtos a serem envia
 O contribuidor pode fazer em qualquer lang e utilizar qualquer ferramenta que achar necessario para alcançar a melhor performance.
 
 # Regras:
-O CLIENTE precisa ter um cnpj valido.
+O CLIENTE precisa ter um cnpj valido(14 digitos).
 
-O cep precisa estar no range da tabela de preço de frete.
+O cep precisa estar no range da tabela de preço de frete e ser um cep valido(8 digitos)
 
 O peso não pode ser superior a 10 ton
+
 
 # Dados
 Exemplo de requisição:
@@ -70,10 +71,10 @@ CREATE TABLE tabela_frete (
 
 INSERT INTO tabela_frete (faixa_peso, faixa_cep_inicio, faixa_cep_fim, tarifa)
 VALUES 
-('0 a 10kg', '10000', '20000', 15.00),
-('10 a 100kg', '10000', '20000', 25.00),
-('100kg a 1ton', '20001', '50000', 100.00),
-('1ton a 10ton', '20001', '50000', 500.00);
+('0 a 10kg', '01000000', '02000000', 15.00),
+('10 a 100kg', '03000000', '04000000', 25.00),
+('100kg a 1ton', '05000000', '06000000', 100.00),
+('1ton a 10ton', '07000000', '01100000', 500.00);
 
 
 # AB teste de carga
