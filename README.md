@@ -1,21 +1,34 @@
 # Desafio: Cálculo de Preço de Frete
 
-Descrição:
-Você faz parte de uma empresa de logística, responsável por um novo projeto voltado para calcular o preço do frete com base no peso dos produtos. Seu objetivo é desenvolver um endpoint POST em uma API que receba os detalhes dos produtos a serem enviados e calcule o preço final do frete com base nessas informações.
+### Descrição:
 
-Estrutura do Objeto JSON:
+Você faz parte de uma empresa de logística, responsável por um novo projeto voltado para calcular o preço do frete com base no peso dos produtos. Seu objetivo é desenvolver um endpoint POST em uma API que receba os detalhes dos produtos a serem enviados e calcule o preço final do frete com base nessas informações.
+ 
+### Estrutura do Objeto JSON:
+
 O endpoint receberá um objeto JSON contendo detalhes dos produtos a serem enviados, incluindo o peso de cada produto. Além disso, você terá acesso a um banco de dados com a tabela de preços de frete, onde poderá buscar as informações necessárias para realizar o cálculo.
 
+Será validado o calculo do retorno.
 # Stack
 O contribuidor pode fazer em qualquer lang e utilizar qualquer ferramenta que achar necessario para alcançar a melhor performance.
 
 # Regras:
-O CLIENTE precisa ter um cnpj valido(14 digitos).
 
-O cep precisa estar no range da tabela de preço de frete e ser um cep valido(8 digitos)
+#### O Cliente precisa ter um cnpj valido(14 digitos).
 
-O peso não pode ser superior a 10 ton
+_cnpj invalido deverá retornar 400_
 
+#### O cep precisa estar no range da tabela de preço de frete e ser um cep valido(8 digitos)
+
+_cep fora do range da tabela retornar 404_
+
+_cep maior/menor que 8 digitos retornar 400_
+
+#### O peso não pode ser superior a 10 ton
+
+_peso superior a 10 ton retornar 400_
+
+_Se a requisição atender as regras, retornar 200._
 
 # Dados
 Exemplo de requisição:
@@ -60,7 +73,7 @@ Exemplo de retorno:
   "peso_total_kg": 10
 }
 
-SQL:
+#### SQL:
 CREATE TABLE tabela_frete (
     id INT AUTO_INCREMENT PRIMARY KEY,
     faixa_peso VARCHAR(100),
