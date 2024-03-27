@@ -47,7 +47,7 @@ public class CalcularFreteService {
         .sum();
     System.out.println(pesoTotal);
     if (pesoTotal > 10000) {
-      throw new BadRequestException("Peso total excede 10 toneladas");
+      throw new BadRequestException("Peso total excede 10 ton");
     }
 
 
