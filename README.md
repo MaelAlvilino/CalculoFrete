@@ -77,8 +77,8 @@ Exemplo de retorno:
 CREATE TABLE tabela_frete (
     id INT AUTO_INCREMENT PRIMARY KEY,
     faixa_peso VARCHAR(100),
-    faixa_cep_inicio VARCHAR(10),
-    faixa_cep_fim VARCHAR(10),
+    faixa_cep_inicio VARCHAR(8),
+    faixa_cep_fim VARCHAR(8),
     tarifa DECIMAL(10, 2)
 );
 
