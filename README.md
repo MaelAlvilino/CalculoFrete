@@ -8,6 +8,12 @@ Você faz parte de uma empresa de logística, responsável por um novo projeto v
 
 O endpoint receberá um objeto JSON contendo detalhes dos produtos a serem enviados, incluindo o peso de cada produto. Além disso, você terá acesso a um banco de dados com a tabela de preços de frete, onde poderá buscar as informações necessárias para realizar o cálculo.
 
+### Objetivo
+
+Fornecer o preço final do frete com base no peso total dos itens. A tabela com o valor do frete 
+por cada cabeça de cep estará disponivel no final deste documento.
+
+
 Será validado o calculo do retorno.
 # Stack
 O contribuidor pode fazer em qualquer lang e utilizar qualquer ferramenta que achar necessario para alcançar a melhor performance.
