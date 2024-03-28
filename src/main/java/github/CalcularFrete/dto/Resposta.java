@@ -1,3 +1,3 @@
 package github.CalcularFrete.dto;
 
-public record Resposta(String mensagem, Integer preco_final_frete, Integer peso_total_kg) {}
+public record Resposta(String mensagem, Double preco_final_frete, Double peso_total_kg) {}

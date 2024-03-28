@@ -57,9 +57,11 @@ public class CalcularFreteService {
 
     TabelaFrete buscarFreteECep = repository.buscarPrecoECep(r.endereco().getCep(), faixaPeso);
 
-    System.out.println(buscarFreteECep);
+    if (buscarFreteECep == null){
+      throw new NotFoundException("Cep fora do alcance de frete para o total de peso");
+    }
 
 
-    return new Resposta("Autorizado", 1000, 10);
+    return new Resposta("Autorizado", buscarFreteECep.getTarifa(), pesoTotal);
   }
 }
