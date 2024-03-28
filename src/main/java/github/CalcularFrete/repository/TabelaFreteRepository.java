@@ -12,5 +12,12 @@ import org.springframework.stereotype.Repository;
 public interface TabelaFreteRepository extends JpaRepository<TabelaFrete, Integer> {
   @Query("SELECT tf FROM TabelaFrete tf WHERE :cep BETWEEN tf.faixaCepInicio AND tf.faixaCepFim")
   List<Optional<TabelaFrete>> buscarCep(@Param("cep") String cep);
+
+
+  @Query("  SELECT p"
+      + "  FROM TabelaFrete p"
+      + "  WHERE p.faixaPeso = :faixa_peso"
+      + "  AND :cep BETWEEN p.faixaCepInicio AND p.faixaCepFim")
+  TabelaFrete buscarPrecoECep(@Param("cep") String cep, String faixa_peso);
 }
 

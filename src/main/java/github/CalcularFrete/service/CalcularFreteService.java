@@ -1,7 +1,10 @@
 package github.CalcularFrete.service;
 
+import static github.CalcularFrete.enums.FaixaPeso.calcularFaixaPeso;
+
 import github.CalcularFrete.dto.Orcamento;
 import github.CalcularFrete.dto.Resposta;
+import github.CalcularFrete.enums.FaixaPeso;
 import github.CalcularFrete.enums.Medidas;
 import github.CalcularFrete.exception.BadRequestException;
 import github.CalcularFrete.exception.NotFoundException;
@@ -45,10 +48,16 @@ public class CalcularFreteService {
           return peso * item.getQuantidade();
         })
         .sum();
-    System.out.println(pesoTotal);
     if (pesoTotal > 10000) {
       throw new BadRequestException("Peso total excede 10 ton");
     }
+    FaixaPeso calcularFaixaPeso = calcularFaixaPeso(pesoTotal);
+
+    String faixaPeso = calcularFaixaPeso.getDescricao();
+
+    TabelaFrete buscarFreteECep = repository.buscarPrecoECep(r.endereco().getCep(), faixaPeso);
+
+    System.out.println(buscarFreteECep);
 
 
     return new Resposta("Autorizado", 1000, 10);
